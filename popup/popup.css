@@ -1,0 +1,50 @@
+.main-body{
+    height: 250px;
+    width: 250px;
+}
+
+
+.title{
+    align-items: center;
+    color: orange;
+    font-size: 16px;
+    margin-bottom: 0px;
+    font-weight: 1000;
+    margin-left: 60px;
+    text-decoration:line-through
+}
+
+.desc
+{
+    font-size: 12px;
+    align-items: center;
+    margin-left: 10px;
+}
+
+
+.sync-github{
+    font-size: 10px;
+    border: 2px solid #ffa500;
+    padding: 10px;
+    border-radius: 10px;
+    color: #bfbfbf;
+    background-color: black;
+    margin-left: 83px;
+    margin-top: 5px;
+}
+
+.sync-github:hover{
+    color: black;
+    background-color: orange;
+}
+
+
+
+
+
+
+.sync-github:focus {
+  border-color: #ff8c00;
+  box-shadow: 0 0 6px rgba(255,165,0,0.7);
+}
+

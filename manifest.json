@@ -1,0 +1,27 @@
+{
+  "name": "LeetSync-Prajith",
+  "description": "Syncs your LeetCode answers to your GitHub repo",
+  "version": "1.0",
+  "manifest_version": 3,
+
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+
+  "permissions": [
+    "storage"
+  ],
+
+  "host_permissions": [
+    "https://api.github.com/*",
+    "https://leetcode.com/*",
+    "https://github.com/*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/*"],
+      "js": ["/popup/popup.js"]
+    }
+  ]
+}
