@@ -1,27 +1,39 @@
 {
-  "name": "LeetSync-Prajith",
-  "description": "Syncs your LeetCode answers to your GitHub repo",
-  "version": "1.0",
   "manifest_version": 3,
-
-  "action": {
-    "default_popup": "popup/popup.html"
-  },
-
+  "name": "LeetCode → GitHub Sync",
+  "version": "1.0.0",
+  "description": "Automatically push accepted LeetCode solutions to your GitHub repository with structured folders and README files.",
   "permissions": [
-    "storage"
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs"
   ],
-
   "host_permissions": [
-    "https://api.github.com/*",
     "https://leetcode.com/*",
-    "https://github.com/*"
+    "https://api.github.com/*"
   ],
-
+  "background": {
+    "service_worker": "src/background.js"
+  },
   "content_scripts": [
     {
-      "matches": ["https://leetcode.com/*"],
-      "js": ["/popup/popup.js"]
+      "matches": ["https://leetcode.com/problems/*"],
+      "js": ["src/content.js"],
+      "run_at": "document_idle"
     }
-  ]
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
 }
